@@ -2,7 +2,7 @@
 
 @section('contents')
 <div class="flex justify-center">
-    <div class="w-6/12 bg-white p-6 m-7 rounded-lg">
+    <div class="w-5/12 bg-white p-6 m-7 rounded-lg">
         <div class="text-3xl text-bold flex pb-2 mb-4">
             <h1>Make a new account</h1>
         </div>
