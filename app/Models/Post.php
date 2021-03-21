@@ -12,12 +12,20 @@ class Post extends Model
 
     /**
      * The attributes that are mass assignable.
-     * (post doesn't know its owner [User])
      * @var array
      */
     protected $fillable = [
         'body',
     ];
+
+    /**
+     * return the owner of the Post
+     * @var User
+     */  
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     
 }

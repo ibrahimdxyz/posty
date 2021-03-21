@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::get(); // returns a collection
+        $posts = Post::paginate(10); // returns a collection
 
         return view('posts.index', [
             'posts' => $posts
@@ -31,8 +31,7 @@ class PostsController extends Controller
         ]);
 
 
-        //  Not ideal: the post doesn't need to know the user.
-        //             It's better to create the posts **via** the user.
+        //  Not ideal: It's better to create the posts **via** the user.
         // Post::create([
         //     'user_id' => Auth::user()->id,
         //     'body' => $request->body

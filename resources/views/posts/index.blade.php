@@ -24,7 +24,24 @@
             </form>
 
             @if($posts->count()) 
-                iterate
+                @foreach ($posts as $post)
+                <div class="mb-4 ">
+                    <div class="flex text-center items-center">
+                        <a href="" class="font-bold pr-2">{{ $post->user->name }}</a>
+                        {{-- displays full date if time difference between post data and now is greater than a YEAR   --}}
+                        @if ($post->created_at->diff(new DateTime())->y >= 1) 
+                            <span class="text-gray-600 text-sm">{{ $post->created_at->toDateString() }}</span>
+                        @else
+                        {{-- else, date gets displayed in a short, humanly readable form (in text)   --}}
+                            <span class="text-gray-600 text-sm">{{ $post->created_at->diffForHumans() }}</span>
+                        @endif
+                    </div>                
+                    <p class="mb-2 pl-2">{{ $post->body }}</p>
+                </div>                    
+                @endforeach
+                
+                {{-- displays a tailwind's stylized paginator  --}}
+                {{ $posts->links() }}
             @else
                 <p>There are no posts.</p>
             @endif
