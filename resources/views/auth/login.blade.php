@@ -15,7 +15,7 @@
             <form action="{{ route('login') }}" method="POST" class="w-full flex-col justify-between">
                 @csrf            
                 <div class="mb-3">
-                    <label for="email" class="sr-only"></label>
+                    <label for="email" class="sr-only">Email</label>
                     <input id="email" name="email" type="email" class="bg-gray-100 border-2 p-4 rounded-lg w-full
                     @error('email') border-red-500 border-3 @enderror" placeholder="Your email" value="{{ old('email') }}"> 
                    
@@ -26,7 +26,7 @@
                     @enderror                        
                 </div>
                 <div class="mb-3">
-                    <label for="password" class="sr-only"></label>
+                    <label for="password" class="sr-only">Password</label>
                     <input id="password" name="password" type="password" class="bg-gray-100 border-2 p-4 rounded-lg w-full
                     @error('password') border-red-500 border-3 @enderror" placeholder="Choose a password" value="">   
                     
@@ -35,6 +35,12 @@
                             {{ $message }}
                         </div>    
                     @enderror                     
+                </div>
+
+
+                <div class="mb-3">
+                    <input id="remember" name="remember" type="checkbox" class="ml-4 mr-2 mt-3">            
+                    <label for="remember">Remember me</label>
                 </div>
                 <div>
                     <button type="submit" class="bg-blue-500 text-white px-4 py-3 mt-4 rounded font-medium w-full">
