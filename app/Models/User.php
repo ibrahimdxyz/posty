@@ -46,7 +46,10 @@ class User extends Authenticatable
 
     /** 
      * 
+     * specifies the relationship with Post, adds an attribute 'posts' 
+     * which returns an @var array posts, with all user posts.
      * 
+     * @var object
      *  */ 
     public function posts()
     {

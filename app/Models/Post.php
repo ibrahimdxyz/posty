@@ -10,5 +10,14 @@ class Post extends Model
     use HasFactory;
 
 
+    /**
+     * The attributes that are mass assignable.
+     * (post doesn't know its owner [User])
+     * @var array
+     */
+    protected $fillable = [
+        'body',
+    ];
+
     
 }
