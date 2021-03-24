@@ -1,5 +1,5 @@
 # Posty!
-## A demo app that is meant as an pratical introduction to the PHP framework Laravel.
+## A demo app that is meant to a pratical introduction to the PHP framework Laravel.
 
 
 
