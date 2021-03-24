@@ -20,7 +20,7 @@ I have deployed the app on Heroku as well. It's accessible via this link:
 http://posty-laravel-demo.herokuapp.com/posts
 
 #### Test account to check out the app:
- - email: ibrahim@email.com
+ - email: ibrahim@email.test
  - password: 123
 
 
