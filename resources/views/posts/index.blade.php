@@ -33,7 +33,6 @@
                             <x-post :post="$post"></x-post>
                         @endforeach
                         
-                        {{-- displays a tailwind's stylized paginator  --}}
                         {{ $posts->links() }}
                     @else
                         <div class="text-xl p-6">
