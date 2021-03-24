@@ -13,7 +13,7 @@
             <div class="bg-white p-6 m-7 rounded-lg">
                 @if($posts->count()) 
                     @foreach ($posts as $post)
-                        <x-post :post="$post"></x-post>
+                        <x-post :post="$post" />
                     @endforeach
                     {{-- displays a tailwind's stylized paginator  --}}
                     {{ $posts->links() }}

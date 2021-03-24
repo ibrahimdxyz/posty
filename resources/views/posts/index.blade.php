@@ -23,14 +23,13 @@
                         </button>
                     </div>
                 </form>
-            @auth
-
+            @endauth
 
             <div class="flex justify-center">
                 <div class="w-8/12 flex-col bg-white py-6">
                     @if($posts->count()) 
                         @foreach($posts as $post)
-                            <x-post :post="$post"></x-post>
+                            <x-post :post="$post" />
                         @endforeach
                         
                         {{ $posts->links() }}

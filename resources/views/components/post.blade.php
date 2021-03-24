@@ -2,7 +2,6 @@
 
 <div>
     <!-- Waste no more time arguing what a good man should be, be one. - Marcus Aurelius --> 
-    {{-- :)) --}}
     <div class="mb-2 py-2 px-6 w-full hover:bg-gray-50">
         <div class="flex justify-between">
             <div class="flex text-center items-center">
