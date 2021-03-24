@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::with(['user', 'likes'])->paginate(10); // returns a collection
+        $posts = Post::latest()->with('user', 'likes')->paginate(10); // returns a collection
 
         return view('posts.index', [
             'posts' => $posts
@@ -44,8 +44,14 @@ class PostsController extends Controller
         return back();
     }
 
-    public function destroy() 
+    public function destroy(Post $post) 
     {
 
+        // authorization (throws exception if unauthorized)
+        $this->authorize('delete', $post);
+
+        $post->delete();
+
+        return back();
     }
 }
