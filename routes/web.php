@@ -29,6 +29,9 @@ Route::post('/logout', [LogoutController::class, 'store'])->name('logout');
 Route::get('/register', [RegisterController::class, 'index'])->name('register');
 Route::post('/register', [RegisterController::class, 'store']);
 
+
+Route::get('/post/{post}', [PostsController::class, 'show'])->name('post.show');;
+
 Route::get('/posts', [PostsController::class, 'index'])->name('posts');;
 Route::post('/posts', [PostsController::class, 'store']);
 Route::delete('/posts/{post}', [PostsController::class, 'destroy'])->name('posts.destroy');
