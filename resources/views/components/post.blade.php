@@ -8,7 +8,7 @@
             <div class="flex text-center items-center">
                 <a href="{{ route('users.posts', $post->user) }}" class="font-bold pr-2">{{ $post->user->name }}</a>
                 {{-- displays full date if time difference between post data and now is greater than a YEAR   --}}
-                @if ($post->created_at->diff(new DateTime())->y >= 1) 
+                @if($post->created_at->diff(new DateTime())->y >= 1) 
                     <span class="text-gray-600 text-sm">{{ $post->created_at->toDateString() }}</span>
                 @else
                 {{-- else, date gets displayed in a short, humanly readable form (in text)   --}}
