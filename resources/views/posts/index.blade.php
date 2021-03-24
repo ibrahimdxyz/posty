@@ -31,7 +31,7 @@
                         <div class="mb-2 py-2 px-6 w-full hover:bg-gray-50">
                             <div class="flex justify-between">
                                 <div class="flex text-center items-center">
-                                    <a href="" class="font-bold pr-2">{{ $post->user->name }}</a>
+                                    <a href="{{ route('users.posts', $post->user) }}" class="font-bold pr-2">{{ $post->user->name }}</a>
                                     {{-- displays full date if time difference between post data and now is greater than a YEAR   --}}
                                     @if ($post->created_at->diff(new DateTime())->y >= 1) 
                                         <span class="text-gray-600 text-sm">{{ $post->created_at->toDateString() }}</span>
