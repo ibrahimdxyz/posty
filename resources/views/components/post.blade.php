@@ -22,9 +22,8 @@
                 <form action="{{ route('posts.destroy', $post) }}" method="POST">
                     @csrf
                     @method("DELETE")
-
                     <button class="bg-red-500 text-white rounded-lg px-3 py-1 hover:bg-opacity-75">
-                    Delete                      
+                        Delete                      
                     </button>
                 </form>                            
             @endcan
@@ -40,18 +39,16 @@
         
             @auth                            
                 @if (!$post->isLikedBy(Auth::user()))
-
                     <form action="{{ route('posts.likes', $post->id) }}" method="POST">
                         @csrf
                         <button type="submit" class="text-blue-700 pr-3">Like 👍</button>
                     </form>
                 @else
-                <form action="{{ route('posts.likes', $post->id) }}" method="POST">
-                    @csrf
-                    {{-- method spoofing --}}
-                    @method("DELETE") 
-                    <button type="submit" class="text-blue-700 pr-3">Unlike 👎</button>
-                </form>
+                    <form action="{{ route('posts.likes', $post->id) }}" method="POST">
+                        @csrf
+                        @method("DELETE") 
+                        <button type="submit" class="text-blue-700 pr-3">Unlike 👎</button>
+                    </form>
                 @endif
             @endauth
             <span>{{ $post->likes->count() }} {{ Str::plural('like', $post->likes->count()) }} </span>

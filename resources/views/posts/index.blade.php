@@ -28,23 +28,20 @@
 
             <div class="flex justify-center">
                 <div class="w-8/12 flex-col bg-white py-6">
-                @if($posts->count()) 
-                    @foreach ($posts as $post)
-                        <x-post :post="$post"></x-post>
-                    @endforeach
-                    
-                    {{-- displays a tailwind's stylized paginator  --}}
-                    {{ $posts->links() }}
-                @else
-                <div class="text-xl p-6">
-                    <p>There are no posts to show. Post something!</p>
-                </div>
-                @endif
-
-
+                    @if($posts->count()) 
+                        @foreach ($posts as $post)
+                            <x-post :post="$post"></x-post>
+                        @endforeach
+                        
+                        {{-- displays a tailwind's stylized paginator  --}}
+                        {{ $posts->links() }}
+                    @else
+                        <div class="text-xl p-6">
+                            <p>There are no posts to show. Post something!</p>
+                        </div>
+                    @endif
                 </div>
             </div>
-
         </div>
     </div>
 @endsection
