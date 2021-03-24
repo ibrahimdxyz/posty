@@ -17,7 +17,7 @@ class PostsController extends Controller
     public function index()
     {
 
-        $posts = Post::latest()->with('user', 'likes')->paginate(10); // returns a collection
+        $posts = Post::latest()->with(['user', 'likes'])->paginate(10); // returns a collection
 
         return view('posts.index', [
             'posts' => $posts
