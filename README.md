@@ -24,4 +24,4 @@ http://posty-laravel-demo.herokuapp.com/posts
  - password: 123
 
 
-**Note:** The app might more receive updates adding more features in the near future.
+**Note:** The app might receive more updates in the near future that'd be adding more cool features.
