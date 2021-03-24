@@ -27,5 +27,18 @@ class Post extends Model
         return $this->belongsTo(User::class);
     }
 
-    
+    public function likes()
+    {
+        return $this->hasMany(Like::class);
+    }
+
+    /**
+     * return whether post is liked by a certain user or not
+     * @return boolean
+     */  
+    public function isLikedBy(User $user)
+    {
+        return $this->likes->contains('user_id', $user->id);
+    }
+
 }
